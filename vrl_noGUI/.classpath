@@ -6,5 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="vrl_02"/>
+	<classpathentry kind="src" path="uebung"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
