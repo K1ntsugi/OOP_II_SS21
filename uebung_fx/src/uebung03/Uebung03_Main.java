@@ -3,6 +3,7 @@ package uebung03;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -15,6 +16,7 @@ public class Uebung03_Main extends Application {
 	Button btn1;
 	Button btn2;
 	Button btn3;
+	Label lbl;
 
 	int btn_count = 0;
 
@@ -23,10 +25,12 @@ public class Uebung03_Main extends Application {
 		btn1 = new Button();
 		btn2 = new Button();
 		btn3 = new Button();
+		lbl = new Label();
 
-		btn1.setText("Button 1 " + "[ " + btn_count + " ]");
-		btn2.setText("Button 2 " + "[ " + btn_count + " ]");
-		btn3.setText("Button 3 " + "[ " + btn_count + " ]");
+		btn1.setText("Button 1 ");
+		btn2.setText("Button 2 ");
+		btn3.setText("Button 3 ");
+		lbl.setText(" " + btn_count);
 
 		btn1.setOnAction(e -> button1Click());
 		btn2.setOnAction(e -> button2Click());
@@ -35,10 +39,11 @@ public class Uebung03_Main extends Application {
 		// setting pane, placing buttons
 		BorderPane pane = new BorderPane();
 		pane.setLeft(btn1);
-		pane.setCenter(btn2);
+		pane.setBottom(btn2);
 		pane.setRight(btn3);
+		pane.setCenter(lbl);
 
-		// setting scene, naming the app
+		// setting scene, naming app
 		Scene scene = new Scene(pane, 500, 500);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("My 3 button game");
@@ -46,29 +51,26 @@ public class Uebung03_Main extends Application {
 	}
 
 	public void button1Click() {
-
-		if (!btn1.isPressed()) {
-			++btn_count;
-		}
-
-		btn1.setText("Button 1 " + "[ " + btn_count + " ]");
+		btn_count++;
+		checkCounter();
 	}
 
 	public void button2Click() {
-		btn2.setText("Button 2 " + "[ " + btn_count + " ]");
-		if (!btn2.isPressed()) {
-			btn_count /= 2;
-		}
+		btn_count /= 2;
+		checkCounter();
 	}
 
 	public void button3Click() {
-		btn3.setText("Button 3 " + "[ " + btn_count + " ]");
-		if (btn_count > 2) {
-			if (!btn3.isPressed()) {
-				btn_count -= 2;
-			}
-		} else {
+		btn_count -= 2;
+		checkCounter();
+	}
+
+	public void checkCounter() {
+		lbl.setText(Integer.toString(btn_count));
+		if (btn_count <= 1) {
 			btn3.setDisable(true);
+		} else {
+			btn3.setDisable(false);
 		}
 
 	}
