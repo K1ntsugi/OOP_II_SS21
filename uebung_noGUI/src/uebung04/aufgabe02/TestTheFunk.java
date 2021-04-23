@@ -23,7 +23,7 @@ public class TestTheFunk {
 		System.out.println(f.machwas(5));
 		System.out.println(f.machwas(10));
 
-		// Aufgabe 3
+		// Aufgabe 4
 		YeahFunk_It g = () -> {
 			return "Hallo";
 		};

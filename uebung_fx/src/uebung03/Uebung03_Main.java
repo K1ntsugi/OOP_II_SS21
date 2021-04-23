@@ -1,8 +1,9 @@
 package uebung03;
 
+import java.awt.Button;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -22,26 +23,23 @@ public class Uebung03_Main extends Application {
 
 	public void start(Stage primaryStage) {
 		// setting buttons and event handling
-		btn1 = new Button();
-		btn2 = new Button();
-		btn3 = new Button();
-		lbl = new Label();
-
-		btn1.setText("Button 1 ");
-		btn2.setText("Button 2 ");
-		btn3.setText("Button 3 ");
-		lbl.setText(" " + btn_count);
-
-		btn1.setOnAction(e -> button1Click());
-		btn2.setOnAction(e -> button2Click());
-		btn3.setOnAction(e -> button3Click());
+		/*
+		 * btn1 = new Button(); btn2 = new Button(); btn3 = new Button(); lbl = new
+		 * Label();
+		 * 
+		 * btn1.setText("Button 1 "); btn2.setText("Button 2 ");
+		 * btn3.setText("Button 3 "); lbl.setText(" " + btn_count);
+		 * 
+		 * btn1.setOnAction(e -> button1Click()); btn2.setOnAction(e -> button2Click());
+		 * btn3.setOnAction(e -> button3Click());
+		 */
 
 		// setting pane, placing buttons
 		BorderPane pane = new BorderPane();
-		pane.setLeft(btn1);
-		pane.setBottom(btn2);
-		pane.setRight(btn3);
-		pane.setCenter(lbl);
+		// pane.setLeft(btn1);
+		// pane.setBottom(btn2);
+		// pane.setRight(btn3);
+		// pane.setCenter(lbl);
 
 		// setting scene, naming app
 		Scene scene = new Scene(pane, 500, 500);
@@ -68,9 +66,9 @@ public class Uebung03_Main extends Application {
 	public void checkCounter() {
 		lbl.setText(Integer.toString(btn_count));
 		if (btn_count <= 1) {
-			btn3.setDisable(true);
+			// btn3.setDisable(true);
 		} else {
-			btn3.setDisable(false);
+			// btn3.setDisable(false);
 		}
 
 	}
