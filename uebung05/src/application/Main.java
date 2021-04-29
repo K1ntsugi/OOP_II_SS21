@@ -1,4 +1,4 @@
-package uebung05;
+package application;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -9,7 +9,7 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class TestRechner extends Application {
+public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
