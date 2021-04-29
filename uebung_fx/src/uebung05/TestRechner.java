@@ -49,28 +49,15 @@ public class TestRechner extends Application {
 		equals.setPrefSize(50, 50);
 		equals.setText(" = ");
 
-		// Alles klar ich kann alle Buttons anlegen
 		Button[] buttonArr = new Button[10];
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < buttonArr.length; i++) {
 			digit = new Button();
 			digit.setPrefSize(50, 50);
 			digit.setText(Integer.toString(i));
+			final int loopVar = i;
+			digit.setOnAction(e -> addNum(loopVar));
 			buttonArr[i] = digit;
-
 		}
-
-		// aber muss die labdas alle einzeln aufrufen
-		// wie geht das besser? ich steh auf dem Schlauch
-		buttonArr[0].setOnAction(e -> addNum(0));
-		buttonArr[1].setOnAction(e -> addNum(1));
-		buttonArr[2].setOnAction(e -> addNum(2));
-		buttonArr[3].setOnAction(e -> addNum(3));
-		buttonArr[4].setOnAction(e -> addNum(4));
-		buttonArr[5].setOnAction(e -> addNum(5));
-		buttonArr[6].setOnAction(e -> addNum(6));
-		buttonArr[7].setOnAction(e -> addNum(7));
-		buttonArr[8].setOnAction(e -> addNum(8));
-		buttonArr[9].setOnAction(e -> addNum(9));
 
 		plus.setOnAction(e -> setOp(Calcmode.plus));
 		minus.setOnAction(e -> setOp(Calcmode.keiner));
