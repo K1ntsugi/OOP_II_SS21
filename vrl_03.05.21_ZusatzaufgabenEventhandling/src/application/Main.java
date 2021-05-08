@@ -64,7 +64,6 @@ public class Main extends Application {
 			container.setImage(pic);
 			iAmGroth.getChildren().add(container);
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 
