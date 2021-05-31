@@ -66,10 +66,11 @@ public class Clients extends Application {
 
 	}
 
-	private Object sendMsgToClient02() {
+	private void sendMsgToClient02() {
 
 		if (txtClient01.getText().isEmpty()) {
-			return null;
+			// return null;
+			return;
 		}
 
 		Label msg_to_client01 = new Label();
@@ -85,13 +86,13 @@ public class Clients extends Application {
 		vbox01.getChildren().add(msg_to_client02);
 		txtClient01.clear();
 
-		return null;
+		// return null;
 	}
 
-	private Object sendMsgToClient01() {
+	private void sendMsgToClient01() {
 
 		if (txtClient02.getText().isEmpty()) {
-			return null;
+			return;
 		}
 
 		Label msg_to_client02 = new Label();
@@ -108,7 +109,6 @@ public class Clients extends Application {
 		vbox02.getChildren().add(msg_to_client01);
 		txtClient01.clear();
 		txtClient02.clear();
-		return null;
 	}
 
 	public static void start(String[] args) {
